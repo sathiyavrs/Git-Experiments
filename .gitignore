@@ -1,2 +1,4 @@
 # For temporary files created by Vim or Emacs
 *.txt~
+*.js~
+*.gitignore~
