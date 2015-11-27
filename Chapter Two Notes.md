@@ -47,6 +47,8 @@ You can also use `git rm <filename> --cached` to remove files that have been add
 
 `git mv` is used mainly to rename a file as `git mv README.md README`. However, this command is basically an encapsulation of three commands: `rni`, `git rm`, `git add`.
 
+##### Viewing History
+
 `git log` is the easiest way to figure out the history of a project. It lists all commits in reverse chronological order, along with the SHA-1 checksum, author's name and email id, and the commit message.
 I'm just gonna list all the important options here.
 
@@ -66,3 +68,50 @@ The `pretty` option allows for the `format` parameter, which can be used in mult
 The results of the previous commit are overwritten by the next commit.
 
 If you'd like to unmodify a modified file, use `git checkout -- <filename>`.
+
+##### Working with Remotes
+
+Remotes are repositories hosted on the internet. Remote repositories, if you will. They're handled as a *url* and a *name* combination.
+
+`git remote` will list the shortnames of all remotes linked with this git controlled project. A useful option is `-v`, which will list the shortnames along with the urls.
+
+To add a remote, use `git remote add <remote-name> <url>`.
+
+The difference between `git remote` and `git pull` seems to be as follows: pulling is branch specific, and fetching is not branch specific. Fetching fetches all data from the remote.
+
+The syntax of fetching is `git fetch <remote-name>`. It fetches all data from the remote, but does no merging. Merging is up to the controller.
+
+The syntax of pulling is `git pull <remote-name> <branch-name>`.
+
+The syntax of pushing is `git push <remote-name> <branch-name>`.
+
+A couple of other commands of which I see no importance to explain now are
+* `git remote show <remote-name>`
+* `git remote rename <remote-name-old> <remote-name-new>`
+* `git remote rm <remote-name-to-delete>`
+
+We'll probably be looking into branching in the next chapter.
+
+##### Tagging
+
+Tagging is seen by GitHub as releases. It is typically used for marking a point in history as important.
+
+`git tag` lists all the tags made so far.
+
+To create an annotated tag, use `git tag -a <tag-name> -m <tag-message>`. The *Tag Name* can be anything. So can the *Tag Message*. To create a lightweight tag, use `git tag <tag-name>`.
+
+Use the `git show <tag-name>` to show the tag data along with the commit.
+
+Tagging seems to happen to all the commits before it. So be sure to commit before tagging that point of history as important. Note that the tag is assigned to the direct previous commit..
+
+To go several steps back, we can use `git tag -a <tag-name> <SHA1-commit-identifier>`.
+
+Usually, tags aren't pushed. To push them, use either `git push <remote-name> <tag-name>`, or `git push <remote-name> --tags`.
+
+To checkout a tag, use `git checkout -b <branch-name> <tag-name>`.
+
+##### Aliases
+
+Oh man, these are so cool. Aliases are shortcuts for git commands. 
+
+For example, after executing `git config --global alias.stat status`, `git status` and `git stat` are the same.
