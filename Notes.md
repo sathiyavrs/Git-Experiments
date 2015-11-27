@@ -29,4 +29,5 @@ Use `git diff --staged` to see what has benn staged for the next commit.
 
 ** Also, checkout `git difftool` later. After you've learned enough vim. **
 
-`git commit` is the general command to commit the staged area. Without the `-m` option, the command opens up a file.
+`git commit` is the general command to commit the staged area. Without the `-m` option, the command opens up a file, called `COMMIT_EDITMSG` within the `.git` folder, which it then checks for the commit message. With the `-m` option, however, we can specify a commit message within the command. Example: `git commit -m 'Fixed physics bug'`.
+`git commit -a` skips the staging area.
