@@ -29,4 +29,4 @@ Use `git diff --staged` to see what has benn staged for the next commit.
 
 ** Also, checkout `git difftool` later. After you've learned enough vim. **
 
-
+`git commit` is the general command to commit the staged area. Without the `-m` option, the command opens up a file.
