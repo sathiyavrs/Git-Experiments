@@ -24,4 +24,9 @@ Perform a `git add *` to stage all untracked and modified files for commit.
 
 Use `git status -s` to perform a short status. Same as `git status --short`. Also, use `git status --verbose` or `git status -v` to (obviously) perform a verbose git operation. 
 
-Use `git diff` to view the differences in all the files. It compares the snapshot at the latest commit with this version, and prints out the differences.
+Use `git diff` to view the differences in all the files. It compares the snapshot at the latest commit with this version, and prints out the differences. Can also use `git diff <file>` to get the differences in that particular file. Useful if `git diff` goes on forever. Once again, there exists a ton of options. 
+Use `git diff --staged` to see what has benn staged for the next commit.
+
+** Also, checkout `git difftool` later. After you've learned enough vim. **
+
+

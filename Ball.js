@@ -6,3 +6,8 @@ function constructBallObject() {
 }
 
 constructBallObject();
+
+function obamaCare() {
+	Ball.Radius = 0;
+	Ball.Bounciness = 0;
+}
